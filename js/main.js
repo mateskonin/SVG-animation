@@ -1,8 +1,13 @@
 const element = document.querySelectorAll(".element");
 const button = document.querySelector(".change-picture");
 button.addEventListener("click", () => {
+    count++
     element.forEach(item => {
-        item.classList.toggle("active")
-        item.classList.toggle("active2")
+        item.style.animationPlayState = "running"
+        if (count > 1) {
+            item.classList.toggle("active")
+            item.classList.toggle("active2")
+            count = 2
+        }
     })
 })
